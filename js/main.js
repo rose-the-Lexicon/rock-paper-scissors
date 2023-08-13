@@ -1,9 +1,9 @@
 let answers = ["rock", "paper", "scissors"];
 
 //gets random answer from answer array, rock paper scissors
-function aiPlayer() {
-    let aiAnswer = answers[Math.floor(Math.random() * answers.length)];
-    return aiAnswer;
+function npcPlayer() {
+    let npcAnswer = answers[Math.floor(Math.random() * answers.length)];
+    return npcAnswer;
 }
 
 //gets player answer from html selection
