@@ -22,16 +22,23 @@ function compareAnswers(playerSelection) {
     const npc = getComputerChoice();
 
     if (p === npc) {
+        console.log("3");
         return "its a tie!!!!!";
     } else if (p === "scissors-button" && npc == "paper-button") {
+        console.log("*");
         return "Scissors beat paper\;you win this round!!!";
     } else if (p === "paper-button" && npc == "rock-button") {
+        console.log("1");
         return "Paper beats rock\; you win this round!!!";
     } else if (p === "rock-button" && npc == "scissors-button") {
+        console.log("2");
         return "Rock beats scissors\; you win this round!!!";
     }
     else {
+        console.log("6");
         return "Sorry, you lost this round!";
     }
 
 }
+
+playerSelector()
