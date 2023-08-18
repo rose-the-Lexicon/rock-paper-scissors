@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
-  <script type="text/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/main.js" defer></script>
 </head>
 <body>
-  <button onclick="game()" id="start">Play game!</button>
+  <div class="img-choices">
+    <button class="button-rps" id="rock-button" type="button"><img class="img-rps" src="imgs/rock.jpg" alt="large pieces of stone sticking out of ground"/></button>
+    <button class="button-rps" id="paper-button" type="button"><img class="img-rps" src="imgs/paper.jpg" alt="floating book"/></button>
+    <button class="button-rps" id="scissors-button" type="button"><img class="img-rps" src="imgs/scissors.jpg" alt="scissors with shadows"/></button>
+  </div>
 </body>
 </html>

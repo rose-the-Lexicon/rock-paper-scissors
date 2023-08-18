@@ -1,0 +1,18 @@
+.img-choices {
+    display: flex;
+    height: 250px;
+    width: auto;
+}
+
+.img-rps {
+    width: 200px;
+    height: 200px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 210px;
+}
