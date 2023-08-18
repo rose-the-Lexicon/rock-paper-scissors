@@ -1,4 +1,4 @@
-let answers = ["rock-button", "paper-button", "scissors-button"];
+const answers = ["rock-button", "paper-button", "scissors-button"];
 
 //gets random answer from answer array, rock paper scissors
 function getComputerChoice() {
@@ -6,39 +6,40 @@ function getComputerChoice() {
     return npcAnswer;
 }
 
-//gets player answer
+//player selectors
 function playerSelector() {
-    rpsChoice = document.querySelectorAll(".button-rps");
-    rpsChoice.forEach(e => {
-        e.addEventListener("click", function() {
-            compareAnswers(e.id);
-        })
-    });
+    const rock = document.getElementById("rock-button");
+    const paper = document.getElementById("paper-button");
+    const scissors = document.getElementById("scissors-button");
+    rock.addEventListener("click", function() {
+        compareAnswers("rock-button", getComputerChoice());
+    })
+    paper.addEventListener("click", function() {
+        compareAnswers("paper-button", getComputerChoice());
+    }) 
+    scissors.addEventListener("click", function() {
+        compareAnswers("scissors-button", getComputerChoice());
+})
 }
 
 //determines winner
-function compareAnswers(playerSelection) {
-    const p = playerSelection;
-    const npc = getComputerChoice();
-
+function compareAnswers(button, computerAnswer) {
+    p = button;
+    npc = getComputerChoice();
+    let pWin = 0;
+    let nWin = 0;
     if (p === npc) {
-        console.log("3");
-        return "its a tie!!!!!";
-    } else if (p === "scissors-button" && npc == "paper-button") {
-        console.log("*");
-        return "Scissors beat paper\;you win this round!!!";
-    } else if (p === "paper-button" && npc == "rock-button") {
-        console.log("1");
-        return "Paper beats rock\; you win this round!!!";
-    } else if (p === "rock-button" && npc == "scissors-button") {
-        console.log("2");
-        return "Rock beats scissors\; you win this round!!!";
+        console.log("tie");
+    } else if (p === "scissors-button" && npc == "paper-button" || 
+    p === "paper-button" && npc == "rock-button" || 
+    p === "rock-button" && npc == "scissors-button" || 
+    p === "scissors-button" && npc === "paper-button") {
+        ++pWin;
+        console.log("playWin")
+    } else {
+        ++nWin;
+        console.log("nWin")
     }
-    else {
-        console.log("6");
-        return "Sorry, you lost this round!";
-    }
-
 }
 
 playerSelector()
