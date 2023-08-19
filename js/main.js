@@ -1,5 +1,17 @@
 const answers = ["rock-button", "paper-button", "scissors-button"];
 
+//score board
+function scoreboard (result) {
+    const playerScoreBoard = document.getElementById("playerscore");
+    const computerScoreBoard = document.getElementById("npcscore");
+
+    if (result === "player win") {
+        playerScoreBoard.textContent = parseInt(playerScoreBoard.textContent) + 1;
+    } else {
+        computerScoreBoard.textContent = parseInt(computerScoreBoard.textContent) + 1;
+    }
+}
+
 //gets random answer from answer array, rock paper scissors
 function getComputerChoice() {
     let npcAnswer = answers[Math.floor(Math.random() * answers.length)];
@@ -34,12 +46,9 @@ function compareAnswers(button, computerAnswer) {
     p === "paper-button" && npc == "rock-button" || 
     p === "rock-button" && npc == "scissors-button" || 
     p === "scissors-button" && npc === "paper-button") {
-        ++pWin;
-        console.log("playWin")
+        scoreboard("player win");
     } else {
-        ++nWin;
-        console.log("nWin")
+        scoreboard("computer win");
     }
 }
-
-playerSelector()
+playerSelector();
