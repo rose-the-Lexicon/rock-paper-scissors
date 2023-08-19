@@ -28,9 +28,14 @@ button {
     height: 210px;
 }
 
-.score {
+.score, #winner {
     display: flex;
     justify-content: center;
     gap: 100px;
     color: pink;
+}
+
+.score-group {
+    display: flex;
+    gap: 10px;
 }

@@ -23,16 +23,18 @@ function playerSelector() {
     const rock = document.getElementById("rock-button");
     const paper = document.getElementById("paper-button");
     const scissors = document.getElementById("scissors-button");
-    rock.addEventListener("click", function() {
+
+    rock.addEventListener("click", function play() {
         compareAnswers("rock-button", getComputerChoice());
     })
-    paper.addEventListener("click", function() {
+    paper.addEventListener("click", function play() {
         compareAnswers("paper-button", getComputerChoice());
     }) 
-    scissors.addEventListener("click", function() {
+    scissors.addEventListener("click", function play() {
         compareAnswers("scissors-button", getComputerChoice());
-})
+    })
 }
+
 
 //determines winner
 function compareAnswers(button, computerAnswer) {
@@ -50,5 +52,17 @@ function compareAnswers(button, computerAnswer) {
     } else {
         scoreboard("computer win");
     }
+
+    const playerScoreBoard = parseInt(document.getElementById("playerscore").textContent);
+    const computerScoreBoard = parseInt(document.getElementById("npcscore").textContent)
+    if (playerScoreBoard === 5 || computerScoreBoard === 5) {
+        if (playerScoreBoard > computerScoreBoard) {
+            document.getElementById("winner").textContent = "player wins!"
+        } else if (computerScoreBoard > playerScoreBoard) {
+            document.getElementById("winner").textContent = "computer wins!"
+        }
+    }
 }
+
+
 playerSelector();
